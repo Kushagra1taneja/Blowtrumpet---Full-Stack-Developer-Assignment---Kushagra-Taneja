@@ -46,6 +46,7 @@ lerna-debug.log*
 token.txt
 node_modules/
 dist/
+.vscode/
 
 # temp directory
 .temp
