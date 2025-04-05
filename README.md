@@ -1,11 +1,4 @@
-markdown
-
-Collapse
-
-Wrap
-
-Copy
-# Backend Assignment
+# Assignment
 
 A NestJS backend application with user authentication, profile management, and campaign joining features, built with MongoDB Atlas.
 
@@ -52,7 +45,7 @@ A NestJS backend application with user authentication, profile management, and c
   ```
   Includes unit tests for `AuthService.login` covering successful login, user not found, and incorrect password scenarios.
 
-## API Usage Examples
+## API Usage Examples (with output screenshots)
 
 ### Using `curl`
 
@@ -60,46 +53,57 @@ A NestJS backend application with user authentication, profile management, and c
 ```bash
 curl -X POST http://localhost:3000/api/auth/register -H "Content-Type: application/json" -d "{\"name\": \"John Doe\", \"email\": \"john@example.com\", \"username\": \"johndoe\", \"password\": \"password123\", \"bio\": \"Hello, I am John!\"}"
 ```
+![image](https://github.com/user-attachments/assets/97f0938a-a00d-4ad8-91ce-638b06ed02b2)
+
 
 #### Login User:
 ```bash
 curl -X POST http://localhost:3000/api/auth/login -H "Content-Type: application/json" -d "{\"username\": \"johndoe\", \"password\": \"password123\"}"
 ```
+![image](https://github.com/user-attachments/assets/87e9bb09-2d54-4988-9ca9-52dbf391a977)
+
 
 #### Get Profile (replace `<token>` with JWT from login):
 ```bash
 curl -X GET http://localhost:3000/api/profile -H "Authorization: Bearer <token>"
 ```
+![image](https://github.com/user-attachments/assets/8586ce5a-12ad-4682-8ab5-27e27d59e332)
 
 #### Update Profile:
 ```bash
 curl -X PUT http://localhost:3000/api/profile -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d "{\"name\": \"John Updated\", \"bio\": \"Updated bio\"}"
 ```
+![image](https://github.com/user-attachments/assets/62751be9-7596-4f75-b537-66cb0efa02cc)
+
 
 #### Get Campaigns:
 ```bash
 curl -X GET "http://localhost:3000/api/campaigns?status=active"
 ```
+![image](https://github.com/user-attachments/assets/d1d1386a-b842-4195-9e1a-470aff81faa4)
+
 
 #### Get Campaign by ID:
 ```bash
 curl -X GET http://localhost:3000/api/campaigns/<campaign-id>
 ```
+![image](https://github.com/user-attachments/assets/bbac4dfd-1d42-43ec-ae90-fb943d158fe9)
 
 #### Join Campaign:
 ```bash
 curl -X POST http://localhost:3000/api/campaigns/<campaign-id>/join -H "Authorization: Bearer <token>"
 ```
+![image](https://github.com/user-attachments/assets/aa58ee38-1239-421d-b255-c5eccb7412b1)
 
 #### Leave Campaign:
 ```bash
 curl -X POST http://localhost:3000/api/campaigns/<campaign-id>/leave -H "Authorization: Bearer <token>"
 ```
+![image](https://github.com/user-attachments/assets/28805b9d-3e58-4fbc-aa18-ac2f59bdaf81)
 
 ### Notes
 - Replace `<token>` with the JWT from the login response.
 - Replace `<campaign-id>` with an actual campaign ID from the `GET /api/campaigns` response.
-- Screenshots are stored in the `screenshots/` directory.
 
 ## Design Decisions
 
