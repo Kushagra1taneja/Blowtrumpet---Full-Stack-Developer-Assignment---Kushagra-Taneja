@@ -63,6 +63,13 @@ curl -X POST http://localhost:3000/api/auth/login -H "Content-Type: application/
 ![image](https://github.com/user-attachments/assets/87e9bb09-2d54-4988-9ca9-52dbf391a977)
 
 
+#### Logout User:
+```bash
+curl -X POST http://localhost:3000/api/auth/logout
+```
+![image](https://github.com/user-attachments/assets/75eb2278-1d08-41cb-a013-e525f3f749c1)
+
+
 #### Get Profile (replace `<token>` with JWT from login):
 ```bash
 curl -X GET http://localhost:3000/api/profile -H "Authorization: Bearer <token>"
