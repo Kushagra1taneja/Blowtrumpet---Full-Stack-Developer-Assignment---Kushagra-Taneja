@@ -1,5 +1,3 @@
-# Assignment
-
 A NestJS backend application with user authentication, profile management, and campaign joining features, built with MongoDB Atlas.
 
 ## Setup Instructions
